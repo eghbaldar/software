@@ -1,0 +1,51 @@
+﻿
+Partial Class Management_Admin_admin_software_AddPost2
+    Inherits System.Web.UI.Page
+
+    'Public Function GenerateFileName(ByVal filename As String) As String
+    '    '
+    '    Dim f As New System.IO.FileInfo(filename)
+    '    Dim strNewFileName = Guid.NewGuid.ToString.Replace("-", "") & f.Extension
+    '    Return strNewFileName
+    '    '
+    'End Function
+
+    'Protected Sub btnSaveAds_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSaveAds.Click
+    '    '
+    '    Try
+    '        Dim PostBll As New Software.BLL.Post
+
+    '        Dim intLocation As Integer
+    '        Integer.TryParse(txtLocation.Text.Trim(), intLocation)
+    '        If intLocation = 0 Then intLocation = -1
+
+
+    '        Dim ImageFileName As String
+    '        If FileUpload1.HasFile Then
+    '            Dim strServerPath As String = Server.MapPath("../../Content/Images/SoftwareImage/")
+    '            ImageFileName = GenerateFileName(FileUpload1.FileName)
+    '            FileUpload1.SaveAs(strServerPath & ImageFileName)
+    '        End If
+
+    '        Dim bolResult As Boolean = PostBll.InsertPost2(txtPostTitle.Text.Trim, dllCategory.SelectedValue, txtAdsBody.Value.Trim, ImageFileName, intLocation, txtHyperlink.Text.Trim)
+    '        If bolResult = True Then
+    '            lblMessage.Text = "پست جدید با موفقیت ذخیره گردید."
+    '        Else
+    '            lblMessage.Text = "خطا در درج پست"
+    '        End If
+    '        gvPostList.DataBind()
+    '        Call ClearForm()
+    '    Catch ex As Exception
+    '        lblMessage.Text = "خطا در درج پست"
+    '    End Try
+    '    ''
+    'End Sub
+
+    'Private Sub ClearForm()
+    '    txtPostTitle.Text = String.Empty
+    '    txtHyperlink.Text = String.Empty
+    '    txtAdsBody.Value = String.Empty
+    '    txtLocation.Text = String.Empty
+    'End Sub
+
+End Class

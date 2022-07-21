@@ -1,0 +1,79 @@
+﻿#body
+{
+	font-family:Tahoma;
+}
+
+.CommentsContainer
+{
+	width:563px;
+	direction:rtl;
+	padding-top:15px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+	overflow:auto;
+}
+
+.CommentContainer
+{
+	background-color:#e9eef2;
+	padding:5px 5px 15px 5px ;
+	margin:10px 3px 3px 3px ;
+	overflow:auto;
+}
+
+.CommentContainerAleternative
+{
+	background-color:#fde5c9;
+	padding:5px 5px 15px 5px ;
+	margin:10px 3px 3px 3px ;
+	overflow:auto;
+}
+
+.AutherName
+{
+	font-weight:bold;
+	float:right;
+	overflow:auto;
+	color:Black;
+}
+
+.Answer
+{
+	float:left; 
+	padding-left:20px;
+	overflow:auto;
+}
+
+.FormContainer
+{
+	padding-top:10px;
+}
+
+.FormTextBox
+{
+	background-color:Teal;
+	font-size:large;
+	height:30px;
+}
+
+.Content
+{
+	padding-top:10px;
+	color:#73787c;
+	font-family:koodak;
+	font-size:9pt;
+	overflow:auto;
+}
+
+.ReAnswer
+{
+	overflow:auto;
+	border:solid 2px gray;
+	background-color:White;
+	width:70%;
+	float:left;
+	margin-left:10px;
+	padding:5px 5px 15px 5px;
+	margin-bottom:5px;
+}

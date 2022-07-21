@@ -1,0 +1,30 @@
+User-agent: *
+Disallow: /Account
+Disallow: /App_Code
+Disallow: /App_Code/BLL
+Disallow: /App_Code/DAL
+Disallow: /App_Code/Others
+Disallow: /Bin
+Disallow: /Content
+Disallow: /Content/ckeditor
+Disallow: /Content/font
+Disallow: /Content/Images
+Disallow: /Content/jcarousel
+Disallow: /Content/Script
+Disallow: /Content/Style
+Disallow: /Dashboard
+Disallow: /UserControl
+Disallow: /*?*
+Disallow: /*?
+Allow: /Content/UserFiles/Ads
+Allow: /Content/UserFiles/News
+Allow: /Content/UserFiles/Product
+Allow: /Content/UserFiles/Software
+Allow: /Content/UserFiles/SoftwareIcon
+
+# Google Image
+User-agent: Googlebot-Image
+Disallow:
+Allow: /*
+
+Sitemap: http://software.shaahr.com/sitemap.xml

@@ -1,0 +1,172 @@
+﻿
+Partial Class rss
+    Inherits System.Web.UI.Page
+
+    Dim Uri As String = "http://www.mydomain.com"
+    Dim EmailAdress As String = "someone@somewhere.com"
+    Dim RFCDateTime As String = "Mon, 03 Nov 2003 14:00:00 GMT"
+
+    Private Function GenerateRSS() As String
+        Dim channel As New Raccoom.Xml.RssChannel
+        channel.Category = "Category"
+        channel.Cloud.Domain = Uri
+        channel.Cloud.Path = "mypath/doc"
+        channel.Cloud.Port = 80
+        channel.Cloud.Protocol = Raccoom.Xml.CloudProtocol.HttpPost
+        channel.Cloud.RegisterProcedure = "myprocedure"
+        channel.Copyright = "Copyright"
+        channel.Description = "Description"
+        channel.Docs = Uri
+        channel.Generator = "Generator"
+        channel.Image.Description = "Description"
+        channel.Image.Height = 30
+        channel.Image.Link = Uri
+        channel.Image.Title = "Title"
+        channel.Image.Url = Uri
+        channel.Image.Width = 80
+        channel.Language = System.Globalization.CultureInfo.CurrentCulture
+        channel.LastBuildDate = DateTime.Now
+        channel.Link = Uri
+        channel.ManagingEditor = EmailAdress
+        channel.PubDate = RFCDateTime
+        channel.PubDate = DateTime.Now
+        channel.Rating = "Rating"
+        'channel.SkipDays = Raccoom.Xml.SkipDays.Monday 'Or Raccoom.Xml.SkipDays.Tuesday
+        'channel.SkipHours = Integer (1,2,3,4,5,6)
+        channel.TextInput.Description = "Description"
+        channel.TextInput.Link = Uri
+        channel.TextInput.Name = "Name"
+        channel.TextInput.Title = "Title"
+        channel.Title = "Title"
+        channel.Ttl = 10
+        channel.WebMaster = EmailAdress
+        '
+        Dim item As New Raccoom.Xml.RssItem
+        item.Author = EmailAdress
+        item.Category = "Category"
+        item.Comments = "Comments"
+        item.Description = "Description"
+        item.Enclosure.Length = 100
+        item.Enclosure.Type = "text/xml"
+        item.Enclosure.Url = Uri
+        item.Guid.Value = Uri
+        item.Link = Uri
+        item.PubDate = DateTime.Now
+        item.Source.Url = Uri
+        item.Source.Value = "Source"
+        item.Title = "Title"
+        channel.Items.Add(item)
+        ' save channel
+        'string filename = System.IO.Path.GetFullPath("channelfull.xml");
+        'channel.Save(filename);
+        '// load channel
+        'Raccoom.Xml.RssChannel channel1 = new RssChannel(new Uri(filename));
+        '// compare
+        'EqualValues(channel, channel1);
+    End Function
+
+
+    Private Sub getRSS()
+        Dim rssFactory As New Raccoom.Xml.ConcreteRssFactory
+        Dim channel As Raccoom.Xml.IRssChannel = rssFactory.GetFeed(New Uri("http://www.downloadha.com/feed/"))
+        'Dim reader As System.Data.SqlClient.SqlDataReader = channel.Items
+
+        GridView1.DataSource = channel.Items
+        GridView1.DataBind()
+
+        'While reader.Read
+        '    Response.Write(reader("title") & "<br/>")
+        'End While
+
+        'MsgBox(channel.Items.Count)
+
+        'Raccoom.Xml.ConcreteRssFactory rssFactory = new ConcreteRssFactory();
+        'Raccoom.Xml.IRssChannel channel =  rssFactory.GetFeed(new Uri("http://cyber.law.harvard.edu/blogs/gems/tech/sampleRss20.xml"));
+        'channel = rssFactory.GetFeed(new Uri("http://cyber.law.harvard.edu/blogs/gems/tech/sampleRss091.xml"));						
+        'channel = rssFactory.GetFeed(new Uri("http://cyber.law.harvard.edu/blogs/gems/tech/sampleRss092.xml"));						
+        'channel = rssFactory.GetFeed(new Uri("http://express.xstreamsoft.com/rss/rssGenerator.aspx?id=5&dt=Cat24"));
+
+    End Sub
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Call getRSS()
+    End Sub
+End Class
+
+
+'<%@ Page Language="VB" AutoEventWireup="false" CodeFile="rss.aspx.vb" ContentType="text/xml"
+'    Inherits="rss" %>
+
+'<asp:repeater id="RepeaterRSS" runat="server">
+'            <HeaderTemplate>
+'                <rss version="2.0">  
+'                    <channel>  
+'                                <title>Shaahroid.ir / Android.shaahr.com / شهر اندروید / شهروید</title>  
+'                                <link>http://android.shaahr.com</link>  
+'                                <description>  
+'                                این صفحه نشان دهنده فید وبسایت شهروید می باشد.
+'                                </description>
+
+'            </HeaderTemplate>
+'            <ItemTemplate>
+'                <item>  
+
+
+'                <title> <%# RemoveIllegalCharacters(DataBinder.Eval(Container.DataItem, "Title")) %>  </title>  
+
+'                <link> <%# RemoveIllegalCharacters(string.Format("http://android.shaahr.com/Post/{0}/{1}.html",Eval("code"),Eval("Title"))) %>  </link> 
+
+'                <description> <%# RemoveIllegalCharacters(DataBinder.Eval(Container.DataItem, "details")) %></description>  
+
+
+'        </item>
+'            </ItemTemplate>
+'            <FooterTemplate>
+'                </channel> </rss>
+'            </FooterTemplate>
+'        </asp:repeater>
+
+'======================
+'﻿Imports System.Data.SqlClient
+'Imports System.Data
+
+'Partial Class rss
+'    Inherits System.Web.UI.Page
+
+
+'    Public Function RemoveIllegalCharacters(ByVal input As Object) As String
+
+'        Dim data As String = input.ToString
+'        data = data.Replace("&", "&amp;")
+'        data = data.Replace("\", "&quot;")
+'        data = data.Replace("'", "&apos;")
+'        data = data.Replace("<", "&lt;")
+'        data = data.Replace(">", "&gt;")
+
+'        Return data
+
+'    End Function
+
+'    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+
+'        Try
+'            Dim sqlconn As New SqlConnection(ConfigurationManager.ConnectionStrings("shaahrAndroidConnectionString").ConnectionString)
+'            Dim sqlcom As New SqlCommand("select top 20 * from tbl_shaahr_android order by code desc", sqlconn)
+'            Dim sqlda As New SqlDataAdapter(sqlcom)
+'            Dim ds As New DataSet
+'            sqlconn.Open()
+'            sqlda.Fill(ds)
+'            RepeaterRSS.DataSource = sqlcom.ExecuteReader()
+'            RepeaterRSS.DataBind()
+'            sqlconn.Close()
+'        Catch ex As Exception
+
+'        End Try
+
+
+'    End Sub
+
+
+'End Class
+

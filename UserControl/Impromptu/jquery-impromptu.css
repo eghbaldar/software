@@ -1,0 +1,165 @@
+/*    Start : DotNetTips Theme     */
+ 
+.dntfade {
+     background-color: #AAAAAA;
+     position: absolute;
+}
+ 
+div.dnt {
+     background-color: #FFFFFF;
+     border-radius: 10px 10px 10px 10px;
+     border: 1px solid #FFFFFF;
+     box-shadow: 0px 0px 10px 1px #6D6D6C;
+     font-family: tahoma;
+     font-size: 11px;
+     padding: 7px;
+     position: absolute;
+     text-align: left;
+     width: 585px;
+     float:right;
+}
+ 
+div.dnt .dntcontainer {
+     font-size: small;
+}
+ 
+div.dnt .dntclose {
+     color: #BBBBBB;
+     cursor: pointer;
+     font-weight: bold;
+     position: absolute;
+     top: 4px;
+     width: 18px;
+}
+ 
+div.dnt .dntmessage {
+     color: #444444;
+     line-height: 20px;
+     padding: 10px;
+     direction:rtl;
+}
+ 
+div.dnt .dntbuttons {
+     background-color: #F4F4F4;
+     border: 1px solid #EEEEEE;
+     padding: 5px 0px;
+     text-align: right;
+}
+ 
+div.dnt button {
+     background-color: #2F6073;
+     border: 1px solid #F4F4F4;
+     color: #FFFFFF;
+     font-size: 12px;
+     font-weight: bold;
+     margin: 0px 10px;
+     padding: 3px 10px;
+}
+ 
+div.dnt button:hover {
+     background-color: #728A8C;
+}
+ 
+div.dnt button.dntdefaultbutton {
+     background-color: #0099CC;
+}
+ 
+.dnt_state {
+     direction: rtl;
+     text-align: right;
+}
+ 
+.dnt_state button {
+     font-family: tahoma;
+}
+ 
+.dntwarning .dnt .dntbuttons {
+     background-color: #CCDDFF;
+}
+ 
+.dnt .dntarrow {
+     border: 10px solid transparent;
+     font-size: 0px;
+     height: 0px;
+     line-height: 0;
+     position: absolute;
+     width: 0px;
+}
+ 
+.dnt .dntarrowtl {
+     border-bottom-color: #FFFFFF;
+     left: 10px;
+     top: -20px;
+}
+ 
+.dnt .dntarrowtc {
+     border-bottom-color: #FFFFFF;
+     left: 50%;
+     margin-left: -10px;
+     top: -20px;
+}
+ 
+.dnt .dntarrowtr {
+     border-bottom-color: #FFFFFF;
+     right: 10px;
+     top: -20px;
+}
+ 
+.dnt .dntarrowbl {
+     border-top-color: #FFFFFF;
+     bottom: -20px;
+     left: 10px;
+}
+ 
+.dnt .dntarrowbc {
+     border-top-color: #FFFFFF;
+     bottom: -20px;
+     left: 50%;
+     margin-left: -10px;
+}
+ 
+.dnt .dntarrowbr {
+     border-top-color: #FFFFFF;
+     bottom: -20px;
+     right: 10px;
+}
+ 
+.dnt .dntarrowlt {
+     border-right-color: #FFFFFF;
+     left: -20px;
+     top: 10px;
+}
+ 
+.dnt .dntarrowlm {
+     border-right-color: #FFFFFF;
+     left: -20px;
+     margin-top: -10px;
+     top: 50%;
+}
+ 
+.dnt .dntarrowlb {
+     border-right-color: #FFFFFF;
+     bottom: 10px;
+     left: -20px;
+}
+ 
+.dnt .dntarrowrt {
+     border-left-color: #FFFFFF;
+     right: -20px;
+     top: 10px;
+}
+ 
+.dnt .dntarrowrm {
+     border-left-color: #FFFFFF;
+     margin-top: -10px;
+     right: -20px;
+     top: 50%;
+}
+ 
+.dnt .dntarrowrb {
+     border-left-color: #FFFFFF;
+     bottom: 10px;
+     right: -20px;
+}
+ 
+/*    End : DotNetTips Theme     */
